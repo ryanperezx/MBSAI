@@ -6,8 +6,22 @@
         xmlns:local="clr-namespace:MBSAI"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="500" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#FFF0F0F0">
+        Title="Login" Height="300" Width="500" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#FFF0F0F0" Topmost="True">
 
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Label Content="MBSAI Medical Supplies Inventory System" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Separator Margin="25,49,25,207" />
@@ -19,14 +33,14 @@
         <Button x:Name="btnLogin"  Content="Login" HorizontalAlignment="Left" Margin="365,190,0,0" VerticalAlignment="Top" Width="90" Height="35" Cursor="Hand" Click="btnLogin_Click"/>
         <Label x:Name="lblForgot" MouseLeftButtonUp="lblForgot_MouseLeftButtonUp" Foreground="Gray" Content="Forgot your password?" HorizontalAlignment="Left" Margin="229,194,0,0" VerticalAlignment="Top" Background="#01264976" Cursor="Hand"/>
 
-        <Border BorderBrush="#FFCCCCCC" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="35,110,0,0" VerticalAlignment="Top" Width="36" CornerRadius="5,0,0,5" Background="#FFE6E6E6">
+        <Border x:Name="brdUser" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="35,109,0,0" VerticalAlignment="Top" Width="36" CornerRadius="5,0,0,5" Background="#FFE6E6E6">
             <Image Margin="3,4">
                 <Image.Source>
                     <BitmapImage DecodePixelWidth="300" UriSource="/resources/win10-user.png" />
                 </Image.Source>
             </Image>
         </Border>
-        <Border BorderBrush="#FFCCCCCC" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="35,148,0,0" VerticalAlignment="Top" Width="36" CornerRadius="5,0,0,5" Background="#FFE6E6E6">
+        <Border x:Name="brdPassword" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="35,147,0,0" VerticalAlignment="Top" Width="36" CornerRadius="5,0,0,5" Background="#FFE6E6E6">
             <Image Margin="3,4">
                 <Image.Source>
                     <BitmapImage DecodePixelWidth="300" UriSource="/resources/win10-password.png" />
