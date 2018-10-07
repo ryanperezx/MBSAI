@@ -1,0 +1,50 @@
+﻿<Page x:Class="MBSAI.EmployeeMaintenanceRecord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MBSAI"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="613" d:DesignWidth="1375"
+      Title="EmployeeMaintenanceRecord" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight}">
+        <Grid>
+            <iconPacks:PackIconMaterial x:Name="imgBack" Kind="ArrowLeft" Height="50" Width="50" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonUp="imgBack_MouseLeftButtonUp" Margin="30,10,0,0"/>
+            <iconPacks:PackIconMaterial Kind="Pencil" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,140,0" Cursor="Hand"/>
+            <iconPacks:PackIconMaterial Kind="Delete" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,95,0" Cursor="Hand"/>
+            <iconPacks:PackIconMaterial Kind="ContentSave" Height="40" Width="40" HorizontalAlignment="Right" Cursor="Hand" Margin="0,10,50,0"/>
+            <Label Content="Code: " HorizontalAlignment="Left" Margin="125,150,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="285,150,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+            <Label Content="First Name: " HorizontalAlignment="Left" Margin="125,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="285,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+            <Label Content="Middle Name: " HorizontalAlignment="Left" Margin="507,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="695,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+            <Label Content="Last Name: " HorizontalAlignment="Left" Margin="894,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="1046,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+            <Label Content="Department: " HorizontalAlignment="Left" Margin="507,150,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <ComboBox HorizontalAlignment="Left" Margin="695,150,0,0" VerticalAlignment="Top" Width="250" Height="37" FontSize="20"/>
+            <Label Content="Start Date: " HorizontalAlignment="Left" Margin="125,304,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <DatePicker HorizontalAlignment="Left" Margin="285,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
+            <Label Content="End Date: " HorizontalAlignment="Left" Margin="507,304,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <DatePicker HorizontalAlignment="Left" Margin="695,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
+            <Label Content="Active: " HorizontalAlignment="Left" Margin="894,303,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <CheckBox HorizontalAlignment="Left" Margin="973,313,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </materialDesign:TransitioningContent>
+
+</Page>

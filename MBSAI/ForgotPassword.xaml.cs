@@ -24,5 +24,23 @@ namespace MBSAI
         {
             InitializeComponent();
         }
+
+        private void btnConfirmAns_Click(object sender, RoutedEventArgs e)
+        {
+            gridPassword.IsEnabled = true;
+            gridPassword.Visibility = Visibility.Visible;
+
+            gridSecurity.IsEnabled = false;
+            gridSecurity.Visibility = Visibility.Collapsed;
+        }
+
+        private void btnResetPassword_Click(object sender, RoutedEventArgs e)
+        {
+            gridSecurity.IsEnabled = true;
+            gridSecurity.Visibility = Visibility.Visible;
+
+            gridPassword.IsEnabled = false;
+            gridPassword.Visibility = Visibility.Collapsed;
+        }
     }
 }

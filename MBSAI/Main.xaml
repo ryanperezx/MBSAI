@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:MBSAI"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"    
-                      
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Main"
         WindowState="Maximized"
@@ -28,6 +27,10 @@
                     <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="300"/>
                 </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Frame">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1375"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1075"/>
+                </DoubleAnimationUsingKeyFrames>
             </Storyboard>
 
             <Storyboard x:Key="MenuClose">
@@ -35,7 +38,12 @@
                     <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
                     <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
                 </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Frame">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1075"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1375"/>
+                </DoubleAnimationUsingKeyFrames>
             </Storyboard>
+
         </ResourceDictionary>
     </Window.Resources>
 
@@ -52,8 +60,11 @@
 
         <Grid Height="75" VerticalAlignment="Top" Background="AntiqueWhite">
             <Label Content="MBSAI" HorizontalAlignment="Left" Margin="10,21,0,0" FontSize="20" VerticalAlignment="Top"/>
-            <ToggleButton x:Name="ButtonMenu"  Width="30" Height="30"  Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="100,23,1245,22" />
+            <ToggleButton x:Name="ButtonMenu"  Width="30" Height="30"  Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="100,23,1245,22" Cursor="Hand"/>
             <Label x:Name="date" FontSize="14" Content="00:00:00" Margin="0,27,1062,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170"/>
+            <Border x:Name="brdUser" BorderThickness="1" HorizontalAlignment="Right" Width="41" CornerRadius="25,25,25,25" Background="Chocolate" Margin="0,17,166,17">
+                <iconPacks:PackIconMaterial Kind="Account" Height="Auto" Width="Auto" Margin="7,7,7,7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            </Border>
             <Label x:Name="lblUser" Content="User" VerticalAlignment="Center" FontSize="16" Margin="1214,21,119,22" Height="32"/>
             <Label x:Name="lblLogOut" Content="Log Out" VerticalAlignment="Center" FontSize="16" MouseLeftButtonUp="lblLogOut_MouseLeftButtonUp" Margin="1293,22,0,22" HorizontalAlignment="Left" Width="67" Cursor="Hand"/>
         </Grid>
@@ -62,54 +73,59 @@
             <StackPanel >
                 <Expander Width="285" Header="Reference Data Management">
                     <StackPanel>
-                        <TextBlock x:Name="lblInvent" HorizontalAlignment="Right" Text="Inventory Type"  Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInvent_MouseLeftButtonUp" MouseEnter="lblInvent_MouseEnter" MouseLeave="lblInvent_MouseLeave" />
-                        <TextBlock x:Name="lblMedSup" Text="Medical Supplies" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedSup_MouseLeftButtonUp" MouseEnter="lblMedSup_MouseEnter" MouseLeave="lblMedSup_MouseLeave"/>
-                        <TextBlock x:Name="lblMedEqp" Text="Medical Equipment" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedEqp_MouseLeftButtonUp" MouseEnter="lblMedEqp_MouseEnter" MouseLeave="lblMedEqp_MouseLeave"/>
-                        <TextBlock x:Name="lblMed" Text="Medicines" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMed_MouseLeftButtonUp" MouseEnter="lblMed_MouseEnter" MouseLeave="lblMed_MouseLeave"/>
+                        <TextBlock x:Name="lblInvent" HorizontalAlignment="Right" Text="Inventory Type"  Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInvent_MouseLeftButtonUp" MouseEnter="lblInvent_MouseEnter" MouseLeave="lblInvent_MouseLeave" Cursor="Hand" />
+                        <TextBlock x:Name="lblMedSup" Text="Medical Supplies" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedSup_MouseLeftButtonUp" MouseEnter="lblMedSup_MouseEnter" MouseLeave="lblMedSup_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblMedEqp" Text="Medical Equipment" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedEqp_MouseLeftButtonUp" MouseEnter="lblMedEqp_MouseEnter" MouseLeave="lblMedEqp_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblMed" Text="Medicines" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMed_MouseLeftButtonUp" MouseEnter="lblMed_MouseEnter" MouseLeave="lblMed_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblUnit" Text="Unit" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblUnit_MouseLeftButtonUp" MouseEnter="lblUnit_MouseEnter" MouseLeave="lblUnit_MouseLeave" Cursor="Hand"/>
+
                     </StackPanel>
                 </Expander>
                 <Expander Width="285" Header="Transaction Management">
                     <StackPanel>
-                        <TextBlock x:Name="lblInventSum" Text="Inventory Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInventSum_MouseLeftButtonUp" MouseEnter="lblInventSum_MouseEnter" MouseLeave="lblInventSum_MouseLeave"/>
-                        <TextBlock x:Name="lblTranStockIn" Text="Stock In" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblTranStockIn_MouseLeftButtonUp" MouseEnter="lblTranStockIn_MouseEnter" MouseLeave="lblTranStockIn_MouseLeave"/>
-                        <TextBlock x:Name="lblTranStockOut" Text="Stock Out" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblTranStockOut_MouseLeftButtonUp" MouseEnter="lblTranStockOut_MouseEnter" MouseLeave="lblTranStockOut_MouseLeave"/>
-                        <TextBlock x:Name="lblAdjustments" Text="Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblAdjustments_MouseLeftButtonUp" MouseEnter="lblAdjustments_MouseEnter" MouseLeave="lblAdjustments_MouseLeave"/>
+                        <TextBlock x:Name="lblInventSum" Text="Inventory Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInventSum_MouseLeftButtonUp" MouseEnter="lblInventSum_MouseEnter" MouseLeave="lblInventSum_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblTranStockIn" Text="Stock In" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblTranStockIn_MouseLeftButtonUp" MouseEnter="lblTranStockIn_MouseEnter" MouseLeave="lblTranStockIn_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblTranStockOut" Text="Stock Out" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblTranStockOut_MouseLeftButtonUp" MouseEnter="lblTranStockOut_MouseEnter" MouseLeave="lblTranStockOut_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblAdjustments" Text="Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblAdjustments_MouseLeftButtonUp" MouseEnter="lblAdjustments_MouseEnter" MouseLeave="lblAdjustments_MouseLeave" Cursor="Hand"/>
                     </StackPanel>
                 </Expander>
                 <Expander Width="285" Header="Reports Management">
                     <StackPanel>
-                        <TextBlock x:Name="lblReportStock" Text="Stock Ins" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblReportStock_MouseLeftButtonUp" MouseEnter="lblReportStock_MouseEnter" MouseLeave="lblReportStock_MouseLeave"/>
-                        <TextBlock x:Name="lblStockOut" Text="Stock Outs" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStockOut_MouseLeftButtonUp" MouseEnter="lblStockOut_MouseEnter" MouseLeave="lblStockOut_MouseLeave"/>
-                        <TextBlock x:Name="lblOutstanding" Text="Outstanding Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblOutstanding_MouseLeftButtonUp" MouseEnter="lblOutstanding_MouseEnter" MouseLeave="lblOutstanding_MouseLeave"/>
-                        <TextBlock x:Name="lblExpiring"  Text="Expiring Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblExpiring_MouseLeftButtonUp" MouseEnter="lblExpiring_MouseEnter" MouseLeave="lblExpiring_MouseLeave"/>
-                        <TextBlock x:Name="lblStaff" Text="Staff Request Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStaff_MouseLeftButtonUp" MouseEnter="lblStaff_MouseEnter" MouseLeave="lblStaff_MouseLeave"/>
-                        <TextBlock x:Name="lblList" Text="List of Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblList_MouseLeftButtonUp" MouseEnter="lblList_MouseEnter" MouseLeave="lblList_MouseLeave"/>
+                        <TextBlock x:Name="lblReportStock" Text="Stock Ins" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblReportStock_MouseLeftButtonUp" MouseEnter="lblReportStock_MouseEnter" MouseLeave="lblReportStock_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblStockOut" Text="Stock Outs" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStockOut_MouseLeftButtonUp" MouseEnter="lblStockOut_MouseEnter" MouseLeave="lblStockOut_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblOutstanding" Text="Outstanding Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblOutstanding_MouseLeftButtonUp" MouseEnter="lblOutstanding_MouseEnter" MouseLeave="lblOutstanding_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblExpiring"  Text="Expiring Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblExpiring_MouseLeftButtonUp" MouseEnter="lblExpiring_MouseEnter" MouseLeave="lblExpiring_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblStaff" Text="Staff Request Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStaff_MouseLeftButtonUp" MouseEnter="lblStaff_MouseEnter" MouseLeave="lblStaff_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblList" Text="List of Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblList_MouseLeftButtonUp" MouseEnter="lblList_MouseEnter" MouseLeave="lblList_MouseLeave" Cursor="Hand"/>
                     </StackPanel>
                 </Expander>
 
                 <Expander Width="285" Header="Maintenance Management">
                     <StackPanel>
-                        <TextBlock x:Name="lblUserMain" Text="User Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblUserMain_MouseLeftButtonUp" MouseEnter="lblUserMain_MouseEnter" MouseLeave="lblUserMain_MouseLeave"/>
-                        <TextBlock x:Name="lblRole" Text="Role Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblRole_MouseLeftButtonUp" MouseEnter="lblRole_MouseEnter" MouseLeave="lblRole_MouseLeave"/>
-                        <TextBlock x:Name="lblEmployee" Text="Employees Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblEmployee_MouseLeftButtonUp" MouseEnter="lblEmployee_MouseEnter" MouseLeave="lblEmployee_MouseLeave"/>
-                        <TextBlock x:Name="lblDepartment" Text="Department Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblDepartment_MouseLeftButtonUp" MouseEnter="lblDepartment_MouseEnter" MouseLeave="lblDepartment_MouseLeave"/>
+                        <TextBlock x:Name="lblUserMain" Text="User Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblUserMain_MouseLeftButtonUp" MouseEnter="lblUserMain_MouseEnter" MouseLeave="lblUserMain_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblRole" Text="Role Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblRole_MouseLeftButtonUp" MouseEnter="lblRole_MouseEnter" MouseLeave="lblRole_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblEmployee" Text="Employees Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblEmployee_MouseLeftButtonUp" MouseEnter="lblEmployee_MouseEnter" MouseLeave="lblEmployee_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblDepartment" Text="Department Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblDepartment_MouseLeftButtonUp" MouseEnter="lblDepartment_MouseEnter" MouseLeave="lblDepartment_MouseLeave" Cursor="Hand"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>
         </Grid>
 
         <Grid Margin="0,75,0,80">
-            <dragablz:TabablzControl ShowDefaultCloseButton="True" ItemContainerStyle="{StaticResource TrapezoidDragableTabItemStyle}">
-                <TabItem Header="HELLO">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello World</TextBlock>
+            <!--
+            <dragablz:TabablzControl ItemsSource="{Binding TabContents}" x:Name="tabControl" ShowDefaultCloseButton="True" ItemContainerStyle="{StaticResource TrapezoidDragableTabItemStyle}">
+                <TabItem Header="TAB 1">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Tab 1</TextBlock>
                 </TabItem>
-                <TabItem Header="MATERIAL">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Material Design</TextBlock>
+                <TabItem Header="TAB 2">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Tab 2</TextBlock>
                 </TabItem>
-                <TabItem Header="DESIGN">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+                <TabItem Header="TAB 3">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Tab 3</TextBlock>
                 </TabItem>
             </dragablz:TabablzControl>
+            -->
+            <Frame x:Name="Frame" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Panel.ZIndex="-1" Margin="0,0,0,-5" Width="1375" HorizontalAlignment="Right"/>
         </Grid>
         <Grid Height="75" VerticalAlignment="Bottom" Background="Aqua">
             <Label Content="Footer" HorizontalAlignment="Left" Margin="10,21,0,0" FontSize="20" VerticalAlignment="Top"/>

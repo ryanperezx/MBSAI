@@ -1,0 +1,40 @@
+﻿<Page x:Class="MBSAI.MedicalSuppliesRecord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:local="clr-namespace:MBSAI"
+      mc:Ignorable="d" 
+      d:DesignHeight="613" d:DesignWidth="1375"
+      Title="MedicalSuppliesRecord" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <iconPacks:PackIconMaterial x:Name="imgBack" Kind="ArrowLeft" Height="50" Width="50" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonUp="imgBack_MouseLeftButtonUp" Margin="30,10,0,0"/>
+        <iconPacks:PackIconMaterial Kind="Pencil" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,140,0" Cursor="Hand"/>
+        <iconPacks:PackIconMaterial Kind="Delete" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,95,0" Cursor="Hand"/>
+        <iconPacks:PackIconMaterial Kind="ContentSave" Height="40" Width="40" HorizontalAlignment="Right" Cursor="Hand" Margin="0,10,50,0"/>
+        <Label Content="Code: " FontSize="20" Margin="56,128,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="136"/>
+        <Label Content="Start Date:" FontSize="20" Margin="56,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="136"/>
+        <TextBox x:Name="txtCode" FontSize="20" Height="37" Margin="197,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="260"/>
+        <DatePicker FontSize="20" Margin="197,180,0,0" VerticalAlignment="Top" Height="37" HorizontalAlignment="Left" Width="260"/>
+        <Label Content="End Date:" FontSize="20" Margin="489,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166"/>
+        <DatePicker x:Name="endDate" FontSize="20" Margin="667,180,0,0" VerticalAlignment="Top" Height="37" HorizontalAlignment="Left" Width="260"/>
+        <Label Content="Description: " FontSize="20" Margin="489,128,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166"/>
+        <TextBox x:Name="txtDesc" FontSize="20" Height="37" Margin="667,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="260"/>
+        <Label Content="Active: " FontSize="20" Margin="948,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"/>
+        <CheckBox x:Name="chkActive" Margin="1043,180,0,0" VerticalAlignment="Top" Height="37" HorizontalAlignment="Left" Width="40"/>
+    </Grid>
+</Page>

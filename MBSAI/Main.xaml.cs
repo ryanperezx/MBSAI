@@ -8,9 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Dragablz.Core;
+
 
 namespace MBSAI
 {
@@ -47,12 +46,7 @@ namespace MBSAI
 
         private void lblInvent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Inventory Type!");
-        }
-
-        private void lblMedSup_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Medical Supplies!");
+            Frame.Navigate(new InventoryType());
         }
 
         private void lblInvent_MouseEnter(object sender, MouseEventArgs e)
@@ -65,20 +59,9 @@ namespace MBSAI
             lblInvent.TextDecorations = null;
         }
 
-        private void lblMedEqp_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void lblMedSup_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
-        }
-
-        private void lblMedEqp_MouseEnter(object sender, MouseEventArgs e)
-        {
-            lblMedEqp.TextDecorations = TextDecorations.Underline;
-        }
-
-        private void lblMedEqp_MouseLeave(object sender, MouseEventArgs e)
-        {
-            lblMedEqp.TextDecorations = null;
-
+            Frame.Navigate(new MedicalSupplies());
         }
 
         private void lblMedSup_MouseEnter(object sender, MouseEventArgs e)
@@ -92,9 +75,26 @@ namespace MBSAI
 
         }
 
+        private void lblMedEqp_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Frame.Navigate(new MedicalEquipment());
+        }
+
+        private void lblMedEqp_MouseEnter(object sender, MouseEventArgs e)
+        {
+            lblMedEqp.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void lblMedEqp_MouseLeave(object sender, MouseEventArgs e)
+        {
+            lblMedEqp.TextDecorations = null;
+
+        }
+
+
         private void lblMed_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new Medical());
         }
 
         private void lblMed_MouseEnter(object sender, MouseEventArgs e)
@@ -110,7 +110,7 @@ namespace MBSAI
 
         private void lblInventSum_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new InventorySummary());
         }
 
         private void lblInventSum_MouseEnter(object sender, MouseEventArgs e)
@@ -126,7 +126,7 @@ namespace MBSAI
 
         private void lblTranStockIn_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new TransactStockIn());
         }
 
         private void lblTranStockIn_MouseEnter(object sender, MouseEventArgs e)
@@ -142,11 +142,13 @@ namespace MBSAI
 
         private void lblTranStockOut_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            lblTranStockOut.TextDecorations = TextDecorations.Underline;
+            Frame.Navigate(new TransactStockOut());
+    
         }
 
         private void lblTranStockOut_MouseEnter(object sender, MouseEventArgs e)
         {
+            lblTranStockOut.TextDecorations = TextDecorations.Underline;
 
         }
 
@@ -157,7 +159,7 @@ namespace MBSAI
 
         private void lblAdjustments_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new Adjustments());
         }
 
         private void lblAdjustments_MouseEnter(object sender, MouseEventArgs e)
@@ -263,7 +265,7 @@ namespace MBSAI
 
         private void lblUserMain_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new UserMaintenance());
         }
 
         private void lblUserMain_MouseEnter(object sender, MouseEventArgs e)
@@ -278,6 +280,7 @@ namespace MBSAI
 
         private void lblRole_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            Frame.Navigate(new RoleMaintenance());
         }
 
         private void lblRole_MouseEnter(object sender, MouseEventArgs e)
@@ -293,7 +296,7 @@ namespace MBSAI
 
         private void lblEmployee_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new EmployeeMaintenance());
         }
 
         private void lblEmployee_MouseEnter(object sender, MouseEventArgs e)
@@ -308,7 +311,7 @@ namespace MBSAI
 
         private void lblDepartment_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            Frame.Navigate(new DepartmentMaintenance());
         }
 
         private void lblDepartment_MouseEnter(object sender, MouseEventArgs e)
@@ -319,6 +322,23 @@ namespace MBSAI
         private void lblDepartment_MouseLeave(object sender, MouseEventArgs e)
         {
             lblDepartment.TextDecorations = null;
+        }
+
+        private void lblUnit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            lblUnit.TextDecorations = TextDecorations.Underline;
+
+        }
+
+        private void lblUnit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            lblUnit.TextDecorations = null;
+
+        }
+
+        private void lblUnit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Frame.Navigate(new Unit());
         }
     }
 }

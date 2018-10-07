@@ -75,9 +75,79 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListViewInventorySummary.cs" />
+    <Compile Include="Maintenance Management\DepartmentMaintenance.xaml.cs">
+      <DependentUpon>DepartmentMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\DepartmentMaintenanceRecord.xaml.cs">
+      <DependentUpon>DepartmentMaintenanceRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\EmployeeMaintenance.xaml.cs">
+      <DependentUpon>EmployeeMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\EmployeeMaintenanceRecord.xaml.cs">
+      <DependentUpon>EmployeeMaintenanceRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewEmployeeMaintenance.cs" />
+    <Compile Include="GridViewUserEmployee.cs" />
+    <Compile Include="Maintenance Management\UserMaintenance.xaml.cs">
+      <DependentUpon>UserMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\RoleMaintenance.xaml.cs">
+      <DependentUpon>RoleMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\RoleMaintenanceRecord.xaml.cs">
+      <DependentUpon>RoleMaintenanceRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Management\Adjustments.xaml.cs">
+      <DependentUpon>Adjustments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transaction Management\InventorySummary.xaml.cs">
+      <DependentUpon>InventorySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\InventoryType.xaml.cs">
+      <DependentUpon>InventoryType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewReferenceData.cs" />
+    <Compile Include="Reference Data\InventoryTypeRecord.xaml.cs">
+      <DependentUpon>InventoryTypeRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\Medicine.xaml.cs">
+      <DependentUpon>Medicine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\MedicalEquipment.xaml.cs">
+      <DependentUpon>MedicalEquipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\MedicalEquipmentRecord.xaml.cs">
+      <DependentUpon>MedicalEquipmentRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\MedicineRecord.xaml.cs">
+      <DependentUpon>MedicineRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\MedicalSupplies.xaml.cs">
+      <DependentUpon>MedicalSupplies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\MedicalSuppliesRecord.xaml.cs">
+      <DependentUpon>MedicalSuppliesRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Management\TransactStockIn.xaml.cs">
+      <DependentUpon>TransactStockIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Management\TransactStockOut.xaml.cs">
+      <DependentUpon>TransactStockOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance Management\UserMaintenanceRecord.xaml.cs">
+      <DependentUpon>UserMaintenanceRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\Unit.xaml.cs">
+      <DependentUpon>Unit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reference Data\UnitRecord.xaml.cs">
+      <DependentUpon>UnitRecord.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +187,51 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Maintenance Management\DepartmentMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\DepartmentMaintenanceRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\EmployeeMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\EmployeeMaintenanceRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\UserMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\RoleMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\RoleMaintenanceRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction Management\Adjustments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction Management\InventorySummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\InventoryType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\InventoryTypeRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +240,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\Medicine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\MedicalEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\MedicalEquipmentRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\MedicineRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\MedicalSupplies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\MedicalSuppliesRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction Management\TransactStockIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction Management\TransactStockOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Maintenance Management\UserMaintenanceRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\Unit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reference Data\UnitRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +297,9 @@
     <Resource Include="resources\win10-user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports Management\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
