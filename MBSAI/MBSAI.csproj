@@ -75,6 +75,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Reports Management\ExpiringInvent.xaml.cs">
+      <DependentUpon>ExpiringInvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\ListofAdjustments.xaml.cs">
+      <DependentUpon>ListofAdjustments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListViewInventorySummary.cs" />
     <Compile Include="Maintenance Management\DepartmentMaintenance.xaml.cs">
       <DependentUpon>DepartmentMaintenance.xaml</DependentUpon>
@@ -98,6 +104,18 @@
     </Compile>
     <Compile Include="Maintenance Management\RoleMaintenanceRecord.xaml.cs">
       <DependentUpon>RoleMaintenanceRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\OutstandingInvent.xaml.cs">
+      <DependentUpon>OutstandingInvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\ReportsStockIn.xaml.cs">
+      <DependentUpon>ReportsStockIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\ReportsStockOut.xaml.cs">
+      <DependentUpon>ReportsStockOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\StaffRequest.xaml.cs">
+      <DependentUpon>StaffRequest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transaction Management\Adjustments.xaml.cs">
       <DependentUpon>Adjustments.xaml</DependentUpon>
@@ -187,6 +205,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Reports Management\ExpiringInvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\ListofAdjustments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Maintenance Management\DepartmentMaintenance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +238,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Maintenance Management\RoleMaintenanceRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\OutstandingInvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\ReportsStockIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\ReportsStockOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\StaffRequest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -298,8 +340,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports Management\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

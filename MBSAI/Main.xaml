@@ -91,8 +91,8 @@
                 </Expander>
                 <Expander Width="285" Header="Reports Management">
                     <StackPanel>
-                        <TextBlock x:Name="lblReportStock" Text="Stock Ins" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblReportStock_MouseLeftButtonUp" MouseEnter="lblReportStock_MouseEnter" MouseLeave="lblReportStock_MouseLeave" Cursor="Hand"/>
-                        <TextBlock x:Name="lblStockOut" Text="Stock Outs" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStockOut_MouseLeftButtonUp" MouseEnter="lblStockOut_MouseEnter" MouseLeave="lblStockOut_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblReportStockIn" Text="Stock Ins" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblReportStock_MouseLeftButtonUp" MouseEnter="lblReportStock_MouseEnter" MouseLeave="lblReportStock_MouseLeave" Cursor="Hand"/>
+                        <TextBlock x:Name="lblReportStockOut" Text="Stock Outs" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStockOut_MouseLeftButtonUp" MouseEnter="lblStockOut_MouseEnter" MouseLeave="lblStockOut_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblOutstanding" Text="Outstanding Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblOutstanding_MouseLeftButtonUp" MouseEnter="lblOutstanding_MouseEnter" MouseLeave="lblOutstanding_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblExpiring"  Text="Expiring Inventory" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblExpiring_MouseLeftButtonUp" MouseEnter="lblExpiring_MouseEnter" MouseLeave="lblExpiring_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblStaff" Text="Staff Request Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStaff_MouseLeftButtonUp" MouseEnter="lblStaff_MouseEnter" MouseLeave="lblStaff_MouseLeave" Cursor="Hand"/>
