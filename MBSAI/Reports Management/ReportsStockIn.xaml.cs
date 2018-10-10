@@ -20,6 +20,7 @@ namespace MBSAI
     /// </summary>
     public partial class ReportsStockIN : Page
     {
+
         public ReportsStockIN()
         {
             InitializeComponent();
@@ -28,7 +29,17 @@ namespace MBSAI
 
         private void Generate_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            string to = toDate.Text;
+            string from = fromDate.Text;
+            string inventType = cmbInventType.Text;
 
+            if (string.IsNullOrEmpty(fromDate.Text) || string.IsNullOrEmpty(cmbInventType.Text))
+            {
+                MessageBox.Show("One or more fields is empty!");
+            }
+            else {
+                this.NavigationService.Navigate(new StockInReport(from, inventType, to));
+            }
         }
 
         private void fromDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

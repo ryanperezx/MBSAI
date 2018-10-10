@@ -37,7 +37,7 @@ namespace MBSAI
             switch (dr)
             {
                 case MessageBoxResult.Yes:
-                    this.NavigationService.Navigate(new Medical());
+                    this.NavigationService.Navigate(new Unit());
                     break;
                 case MessageBoxResult.No:
                     break;

@@ -35,11 +35,18 @@ namespace MBSAI
 
         private void lblForgot_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            txtUsername.Text = "";
-            txtPassword.Password = "";
-            Hide();
-            new ForgotPassword().ShowDialog();
-            ShowDialog();
+            if (txtUsername.Text == "")
+            {
+                MessageBox.Show("No User ID input");
+            }
+            else
+            {
+                txtUsername.Text = "";
+                txtPassword.Password = "";
+                Hide();
+                new ForgotPassword().ShowDialog();
+                ShowDialog();
+            }
         }
 
     }

@@ -31,9 +31,25 @@
             <Label x:Name="lblDate" Visibility="Hidden" Content="To: " HorizontalAlignment="Left" Margin="397,130,0,0" VerticalAlignment="Top"/>
             <DatePicker x:Name="toDate" Visibility="Hidden" FontSize="20" HorizontalAlignment="Left" Margin="442,131,0,0" VerticalAlignment="Top" Height="37" Width="200"/>
             <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="415,203,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="602,203,0,0" VerticalAlignment="Top" Width="160" Height="37"/>
+            <ComboBox x:Name="cmbInventType" HorizontalAlignment="Left" Margin="602,203,0,0" VerticalAlignment="Top" Width="188" Height="37">
+                <ComboBoxItem Content="ALL"/>
+                <ComboBoxItem Content="Medical Supplies"/>
+                <ComboBoxItem Content="Medical Equipment"/>
+                <ComboBoxItem Content="Medicines"/>
+            </ComboBox>
             <Label Content="Department: " HorizontalAlignment="Left" Margin="75,203,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="206,203,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+            <ComboBox x:Name="cmbDept"  HorizontalAlignment="Left" Margin="206,203,0,0" VerticalAlignment="Top" Width="170" Height="37">
+                <ComboBoxItem Content="ALL"/>
+                <ComboBoxItem Content="12P Accounts Payable"/>
+                <ComboBoxItem Content="12C Accounting Support"/>
+                <ComboBoxItem Content="A2R (AR) Procurement"/>
+                <ComboBoxItem Content="T&amp;E Travel and Expense"/>
+                <ComboBoxItem Content="Intercompany GL"/>
+                <ComboBoxItem Content="Fixed Asset"/>
+                <ComboBoxItem Content="Human Resources"/>
+                <ComboBoxItem Content="Administration"/>
+
+            </ComboBox>
         </Grid>
     </materialDesign:TransitioningContent>
 </Page>

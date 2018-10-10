@@ -38,6 +38,8 @@ namespace MBSAI
             item2.unit = "Piece";
 
             lvInvent.Items.Add(item2);
+
+            date.Text = DateTime.Now.ToString("dd MMMM yyyy");
         }
     }
 }

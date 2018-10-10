@@ -25,18 +25,25 @@
         <Grid>
             <TextBlock HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Adjustments" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignDisplay1TextBlock}"/>
             <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="60,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="170" Margin="215,118,0,0"/>
-            <Label Content="Description: " HorizontalAlignment="Left" Margin="390,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="170" Margin="515,118,0,0"/>
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="37" Margin="234,118,0,0"/>
             <iconPacks:PackIconMaterial Kind="Magnify" Height="37" Width="35" Margin="693,118,0,0" Cursor="Hand" MouseLeftButtonUp="PackIconMaterial_MouseLeftButtonUp"/>
-            <Label Content="Quantity: " HorizontalAlignment="Left" Margin="751,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="170" Margin="852,118,0,0"/>
-            <Label Content="Unit: " HorizontalAlignment="Left" Margin="1042,118,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="1103,118,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+            <Label Content="Code: " HorizontalAlignment="Left" Margin="444,118,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="160" Margin="525,118,0,0"/>
             <Label Content="Adjustment Date: " HorizontalAlignment="Left" Margin="60,204,0,0" VerticalAlignment="Top"/>
             <DatePicker HorizontalAlignment="Left" Margin="234,204,0,0" VerticalAlignment="Top" Height="36" Width="170" FontSize="20"/>
-            <Label Content="Remarks: " HorizontalAlignment="Left" Margin="436,204,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="738" Margin="535,203,0,0"/>
+            <Label Content="Remarks: " HorizontalAlignment="Left" Margin="60,363,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="738" Margin="234,363,0,0"/>
+            <Label Content="By: " HorizontalAlignment="Left" Margin="469,203,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="160" Margin="525,204,0,0"/>
+            <iconPacks:PackIconMaterial Kind="Magnify" Height="37" Width="35" Margin="693,204,0,0" Cursor="Hand" MouseLeftButtonUp="PackIconMaterial_MouseLeftButtonUp"/>
+            <Label Content="ADD/DED: " HorizontalAlignment="Left" Margin="60,290,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="234,290,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
+            <Label Content="Quantity: " HorizontalAlignment="Left" Margin="424,290,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="160" Margin="525,290,0,0"/>
+            <Label IsEnabled="False" Content="Description: " HorizontalAlignment="Left" Margin="750,118,0,0" VerticalAlignment="Top"/>
+            <TextBox IsEnabled="False" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="170" Margin="875,118,0,0"/>
+            <Label Content="Unit: " HorizontalAlignment="Left" Margin="814,290,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="875,290,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
         </Grid>
     </materialDesign:TransitioningContent>
 

@@ -29,7 +29,18 @@ namespace MBSAI
 
         private void Generate_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            string to = toDate.Text;
+            string from = fromDate.Text;
+            string inventType = cmbInventType.Text;
+            if (string.IsNullOrEmpty(from) || string.IsNullOrEmpty(inventType))
+            {
+                MessageBox.Show("One or more fields is empty!");
 
+            }
+            else
+            {
+                this.NavigationService.Navigate(new ExpiringInventoryReport(from, inventType, to));
+            }
         }
 
         private void fromDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

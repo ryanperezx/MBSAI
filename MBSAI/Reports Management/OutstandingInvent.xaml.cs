@@ -27,7 +27,15 @@ namespace MBSAI
 
         private void Generate_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(date.Text))
+            {
+                MessageBox.Show("Please input date to the missing field");
+                date.Focus();
+            }
+            else
+            {
+                this.NavigationService.Navigate(new OutstandingInventReport(date.Text));
+            }
         }
     }
 }

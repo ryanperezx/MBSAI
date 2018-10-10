@@ -27,8 +27,8 @@ namespace MBSAI
             item1.Code = "EMP001";
             item1.empName = "Tankiang Angelita L.";
             item1.department = "Information Technology";
-            item1.startDate = DateTime.Now.ToString("D");
-            item1.endDate = DateTime.Now.ToString("D");
+            item1.startDate = DateTime.Now.ToString("dd MMMM yyyy");
+            item1.endDate = DateTime.Now.ToString("dd MMMM yyyy");
             item1.active = true;
 
             dgEmpMaintenance.Items.Add(item1);
@@ -37,8 +37,8 @@ namespace MBSAI
             item2.Code = "ROL002";
             item2.empName = "Balce Rizaldy E.";
             item2.department = "Clinic";
-            item2.startDate = DateTime.Now.ToString("D");
-            item2.endDate = DateTime.Now.ToString("D");
+            item2.startDate = DateTime.Now.ToString("dd MMMM yyyy");
+            item2.endDate = DateTime.Now.ToString("dd MMMM yyyy");
             item2.active = false;
 
             dgEmpMaintenance.Items.Add(item2);

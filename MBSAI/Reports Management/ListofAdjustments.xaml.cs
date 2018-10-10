@@ -29,7 +29,14 @@ namespace MBSAI
 
         private void Generate_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(fromDate.Text) || string.IsNullOrEmpty(cmbInventType.Text))
+            {
+                MessageBox.Show("One or more fields is empty!");
+            }
+            else
+            {
+                this.NavigationService.Navigate(new ListofAdjustmentReport(fromDate.Text, cmbInventType.Text, toDate.Text));
+            }
         }
 
         private void fromDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

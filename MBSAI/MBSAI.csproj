@@ -54,6 +54,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -75,6 +78,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DBSQLServerUtils.cs" />
+    <Compile Include="DBUtils.cs" />
+    <Compile Include="ListViewAdjustments.cs" />
+    <Compile Include="Reports Management\ListofAdjustmentReport.xaml.cs">
+      <DependentUpon>ListofAdjustmentReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\ExpiringInventoryReport.xaml.cs">
+      <DependentUpon>ExpiringInventoryReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewOutstandingInventReport.cs" />
+    <Compile Include="ListViewStockOutReport.cs" />
+    <Compile Include="ListViewStockInReport.cs" />
+    <Compile Include="Reports Management\OutstandingInventReport.xaml.cs">
+      <DependentUpon>OutstandingInventReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reports Management\ExpiringInvent.xaml.cs">
       <DependentUpon>ExpiringInvent.xaml</DependentUpon>
     </Compile>
@@ -116,6 +134,15 @@
     </Compile>
     <Compile Include="Reports Management\StaffRequest.xaml.cs">
       <DependentUpon>StaffRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\StockInReport.xaml.cs">
+      <DependentUpon>StockInReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\StockOutReport.xaml.cs">
+      <DependentUpon>StockOutReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports Management\StaffRequestReport.xaml.cs">
+      <DependentUpon>StaffRequestReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transaction Management\Adjustments.xaml.cs">
       <DependentUpon>Adjustments.xaml</DependentUpon>
@@ -205,6 +232,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Reports Management\ListofAdjustmentReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\ExpiringInventoryReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\OutstandingInventReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Reports Management\ExpiringInvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -254,6 +293,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Reports Management\StaffRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\StockInReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\StockOutReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports Management\StaffRequestReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -342,4 +393,11 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

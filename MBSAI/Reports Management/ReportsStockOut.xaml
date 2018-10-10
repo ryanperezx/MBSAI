@@ -31,7 +31,12 @@
             <Label x:Name="lblDate" Visibility="Hidden" Content="To: " HorizontalAlignment="Left" Margin="397,130,0,0" VerticalAlignment="Top"/>
             <DatePicker x:Name="toDate" Visibility="Hidden" FontSize="20" HorizontalAlignment="Left" Margin="442,131,0,0" VerticalAlignment="Top" Height="37" Width="200"/>
             <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="75,198,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="262,198,0,0" VerticalAlignment="Top" Width="160" Height="37"/>
+            <ComboBox x:Name="cmbInventType" HorizontalAlignment="Left" Margin="262,198,0,0" VerticalAlignment="Top" Width="160" Height="37">
+                <ComboBoxItem Content="ALL"/>
+                <ComboBoxItem Content="Medical Supplies"/>
+                <ComboBoxItem Content="Medical Equipment"/>
+                <ComboBoxItem Content="Medicines"/>
+            </ComboBox>
         </Grid>
     </materialDesign:TransitioningContent>
 </Page>

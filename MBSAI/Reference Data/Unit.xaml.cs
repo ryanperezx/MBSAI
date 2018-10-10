@@ -25,9 +25,9 @@ namespace MBSAI
             InitializeComponent();
             GridViewReferenceData item1 = new GridViewReferenceData();
             item1.Code = "UNT001";
-            item1.Desc = "piece";
-            item1.startDate = DateTime.Now.ToString("D");
-            item1.endDate = DateTime.Now.ToString("D");
+            item1.Desc = "Piece";
+            item1.startDate = DateTime.Now.ToString("dd MMMM yyyy");
+            item1.endDate = DateTime.Now.ToString("dd MMMM yyyy");
             item1.active = true;
             item1.used = false;
 
@@ -35,9 +35,9 @@ namespace MBSAI
 
             GridViewReferenceData item2 = new GridViewReferenceData();
             item2.Code = "UNT001";
-            item2.Desc = "bottle";
-            item2.startDate = DateTime.Now.ToString("D");
-            item2.endDate = DateTime.Now.ToString("D");
+            item2.Desc = "Bottle";
+            item2.startDate = DateTime.Now.ToString("dd MMMM yyyy");
+            item2.endDate = DateTime.Now.ToString("dd MMMM yyyy");
             item2.active = false;
             item2.used = true;
 

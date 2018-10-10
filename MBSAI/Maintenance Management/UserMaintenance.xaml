@@ -33,7 +33,7 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="USER CODE^" Binding="{Binding Code}" Width="150" IsReadOnly="True">
+                    <DataGridTextColumn Header="USER CODE" Binding="{Binding Code}" Width="150" IsReadOnly="True">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="DESCRIPTION" Binding="{Binding Desc}" Width="250" IsReadOnly="True">
                     </DataGridTextColumn>
@@ -41,9 +41,9 @@
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="START DATE" Binding="{Binding startDate}" Width="240" IsReadOnly="True" >
                     </DataGridTextColumn>
-                    <DataGridCheckBoxColumn Header="ENABLED^" Binding="{Binding enabled}"  Width="100" IsReadOnly="True">
+                    <DataGridCheckBoxColumn Header="ENABLED" Binding="{Binding enabled}"  Width="100" IsReadOnly="True">
                     </DataGridCheckBoxColumn>
-                    <DataGridCheckBoxColumn Header="LOCKED ^" Binding="{Binding locked}" Width="100" IsReadOnly="True">
+                    <DataGridCheckBoxColumn Header="LOCKED" Binding="{Binding locked}" Width="100" IsReadOnly="True">
                     </DataGridCheckBoxColumn>
                 </DataGrid.Columns>
             </DataGrid>

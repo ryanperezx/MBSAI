@@ -28,7 +28,7 @@ namespace MBSAI
             emp1.Code = "USR001";
             emp1.Desc = "Joann Suriaga";
             emp1.Role = "IT Admin";
-            emp1.startDate = DateTime.Now.ToString("D");
+            emp1.startDate = DateTime.Now.ToString("dd MMMM yyyy");
             emp1.enabled = true;
             emp1.locked = false;
 
@@ -38,7 +38,7 @@ namespace MBSAI
             emp2.Code = "USR002";
             emp2.Desc = "Marinette Salutan";
             emp2.Role = "Nurse 1";
-            emp2.startDate = DateTime.Now.ToString("D");
+            emp2.startDate = DateTime.Now.ToString("dd MMMM yyyy");
             emp2.enabled = true;
             emp2.locked = false;
 

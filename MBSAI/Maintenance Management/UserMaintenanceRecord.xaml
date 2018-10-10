@@ -27,8 +27,10 @@
         <Grid>
             <iconPacks:PackIconMaterial x:Name="imgBack" Kind="ArrowLeft" Height="50" Width="50" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonUp="imgBack_MouseLeftButtonUp" Margin="30,10,0,0"/>
             <iconPacks:PackIconMaterial Kind="ContentSave" Height="40" Width="40" HorizontalAlignment="Right" Cursor="Hand" Margin="0,10,50,0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="63,90,0,0" TextWrapping="Wrap" Text="User Maintenance Details" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignDisplay1TextBlock}" Width="437"/>
+            <Grid Margin="0,65,0,0">
             <Label Content="User Code: " HorizontalAlignment="Left" FontSize="20" Margin="64,101,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" IsEnabled="False" FontSize="20" Height="37" TextWrapping="Wrap"  VerticalAlignment="Top" Width="178" Margin="211,101,0,0"/>
+            <TextBox x:Name="userCode" HorizontalAlignment="Left" IsEnabled="False" FontSize="20" Height="37" TextWrapping="Wrap"  VerticalAlignment="Top" Width="178" Margin="211,101,0,0"/>
             <Label Content="Start Date:  " HorizontalAlignment="Left" FontSize="20" Margin="64,168,0,0" VerticalAlignment="Top"/>
             <TextBox HorizontalAlignment="Left" IsEnabled="False" FontSize="20" Height="37" TextWrapping="Wrap"  VerticalAlignment="Top" Width="178" Margin="211,236,0,0"/>
             <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="20" Margin="211,169,0,0" Height="36" Width="178"/>
@@ -55,6 +57,7 @@
             <CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="625,382,0,0"/>
             <Label Content="Last Log in:  " HorizontalAlignment="Left" FontSize="20" Margin="779,372,0,0" VerticalAlignment="Top"/>
             <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="20" Margin="907,372,0,0" Height="36" Width="178"/>
+            </Grid>
         </Grid>
     </materialDesign:TransitioningContent>
 

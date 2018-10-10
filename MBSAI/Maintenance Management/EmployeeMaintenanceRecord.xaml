@@ -28,22 +28,25 @@
             <iconPacks:PackIconMaterial Kind="Pencil" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,140,0" Cursor="Hand"/>
             <iconPacks:PackIconMaterial Kind="Delete" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,10,95,0" Cursor="Hand"/>
             <iconPacks:PackIconMaterial Kind="ContentSave" Height="40" Width="40" HorizontalAlignment="Right" Cursor="Hand" Margin="0,10,50,0"/>
-            <Label Content="Code: " HorizontalAlignment="Left" Margin="125,150,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox HorizontalAlignment="Left" Height="37" Margin="285,150,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
-            <Label Content="First Name: " HorizontalAlignment="Left" Margin="125,211,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox HorizontalAlignment="Left" Height="37" Margin="285,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
-            <Label Content="Middle Name: " HorizontalAlignment="Left" Margin="507,211,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox HorizontalAlignment="Left" Height="37" Margin="695,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
-            <Label Content="Last Name: " HorizontalAlignment="Left" Margin="894,211,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox HorizontalAlignment="Left" Height="37" Margin="1046,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
-            <Label Content="Department: " HorizontalAlignment="Left" Margin="507,150,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <ComboBox HorizontalAlignment="Left" Margin="695,150,0,0" VerticalAlignment="Top" Width="250" Height="37" FontSize="20"/>
-            <Label Content="Start Date: " HorizontalAlignment="Left" Margin="125,304,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <DatePicker HorizontalAlignment="Left" Margin="285,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
-            <Label Content="End Date: " HorizontalAlignment="Left" Margin="507,304,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <DatePicker HorizontalAlignment="Left" Margin="695,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
-            <Label Content="Active: " HorizontalAlignment="Left" Margin="894,303,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <CheckBox HorizontalAlignment="Left" Margin="973,313,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="63,90,0,0" TextWrapping="Wrap" Text="Employee Maintenance Details" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignDisplay1TextBlock}" Width="512"/>
+            <Grid Margin="0,65,0,0">
+                <Label Content="Code: " HorizontalAlignment="Left" Margin="125,150,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <TextBox HorizontalAlignment="Left" Height="37" Margin="285,150,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+                <Label Content="First Name: " HorizontalAlignment="Left" Margin="125,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <TextBox HorizontalAlignment="Left" Height="37" Margin="285,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+                <Label Content="Middle Name: " HorizontalAlignment="Left" Margin="507,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <TextBox HorizontalAlignment="Left" Height="37" Margin="695,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+                <Label Content="Last Name: " HorizontalAlignment="Left" Margin="894,211,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <TextBox HorizontalAlignment="Left" Height="37" Margin="1046,211,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="175"/>
+                <Label Content="Department: " HorizontalAlignment="Left" Margin="507,150,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <ComboBox HorizontalAlignment="Left" Margin="695,150,0,0" VerticalAlignment="Top" Width="250" Height="37" FontSize="20"/>
+                <Label Content="Start Date: " HorizontalAlignment="Left" Margin="125,304,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <DatePicker HorizontalAlignment="Left" Margin="285,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
+                <Label Content="End Date: " HorizontalAlignment="Left" Margin="507,304,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <DatePicker HorizontalAlignment="Left" Margin="695,304,0,0" VerticalAlignment="Top" Height="36" Width="175" FontSize="20"/>
+                <Label Content="Active: " HorizontalAlignment="Left" Margin="894,303,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <CheckBox HorizontalAlignment="Left" Margin="973,313,0,0" VerticalAlignment="Top"/>
+            </Grid>
         </Grid>
     </materialDesign:TransitioningContent>
 

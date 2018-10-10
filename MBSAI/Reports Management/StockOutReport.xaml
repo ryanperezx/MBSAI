@@ -1,0 +1,54 @@
+﻿<Page x:Class="MBSAI.StockOutReport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="613" d:DesignWidth="1375"
+      Title="StockOutReport" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14">
+    <Page.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight}">
+        <Grid>
+            <Label Content="Stock Outs for the Period " HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+            <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="50,49,0,0" VerticalAlignment="Top" FontWeight="Bold"  FontSize="18"/>
+            <Label x:Name="lblInventType" Content="" HorizontalAlignment="Left" Margin="202,49,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="lblDate"  Content="" HorizontalAlignment="Left" Margin="288,10,0,0" VerticalAlignment="Top" FontWeight="Bold"  FontSize="18"/>
+            <ListView x:Name="lvStockOut" Margin="50,110,50,50">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No." Width="60" DisplayMemberBinding="{Binding i}"/>
+                        <GridViewColumn Header="Date" Width="150" DisplayMemberBinding="{Binding date}"/>
+                        <GridViewColumn Header="Inventory Type" Width="150" DisplayMemberBinding="{Binding inventType}"/>
+                        <GridViewColumn Header="Code" Width="80" DisplayMemberBinding="{Binding code}"/>
+                        <GridViewColumn Header="Description" Width="180" DisplayMemberBinding="{Binding desc}"/>
+                        <GridViewColumn Header="Released to" Width="250" DisplayMemberBinding="{Binding releasedTo}"/>
+                        <GridViewColumn Header="Department" Width="180" DisplayMemberBinding="{Binding dept}"/>
+                        <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding qty}"/>
+                        <GridViewColumn Header="Unit" Width="130" DisplayMemberBinding="{Binding unit}"/>
+                        <GridViewColumn Header="Return Date" Width="180" DisplayMemberBinding="{Binding returnDate}"/>
+                        <GridViewColumn Header="Remarks" Width="180" DisplayMemberBinding="{Binding remarks}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </materialDesign:TransitioningContent>
+
+</Page>

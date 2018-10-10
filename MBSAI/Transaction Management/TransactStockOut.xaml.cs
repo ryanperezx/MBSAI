@@ -25,11 +25,6 @@ namespace MBSAI
             InitializeComponent();
         }
 
-        private void searchReleasedTo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
         private void searchDesc_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 

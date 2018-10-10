@@ -7,7 +7,7 @@
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="613" d:DesignWidth="1375"
-      Title="TransactStockIn" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18">
+      Title="TransactStockIn" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Left" VerticalAlignment="Stretch" FontSize="18">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,29 +23,32 @@
     </Page.Resources>
     <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight}">
         <Grid>
-            <TextBlock HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Stock In" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignDisplay1TextBlock}"/>
-            <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="60,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="170" Margin="215,118,0,0"/>
-            <Label Content="Description: " HorizontalAlignment="Left" Margin="390,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="170" Margin="515,118,0,0"/>
-            <iconPacks:PackIconMaterial x:Name="searchDesc" Kind="Magnify" Height="37" Width="35" Margin="693,118,0,0" Cursor="Hand" MouseLeftButtonUp="searchDesc_MouseLeftButtonUp"/>
-            <Label Content="Quantity: " HorizontalAlignment="Left" Margin="751,118,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="170" Margin="852,118,0,0"/>
-            <Label Content="Unit: " HorizontalAlignment="Left" Margin="1042,118,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="1103,118,0,0" VerticalAlignment="Top" Width="170" Height="37"/>
-            <Label Content="Price per Unit: " HorizontalAlignment="Left" Margin="60,200,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="150" Margin="215,200,0,0"/>
-            <Label Content="Date Purchase: " HorizontalAlignment="Left" Margin="377,200,0,0" VerticalAlignment="Top"/>
-            <DatePicker HorizontalAlignment="Left" FontSize="18" Margin="521,200,0,0" VerticalAlignment="Top" Height="37" Width="187"/>
-            <Label Content="Expiry Date: " HorizontalAlignment="Left" Margin="719,200,0,0" VerticalAlignment="Top"/>
-            <DatePicker HorizontalAlignment="Left" FontSize="18" Margin="837,200,0,0" VerticalAlignment="Top" Height="37" Width="165"/>
-            <Label Content="Manufacturer: " HorizontalAlignment="Left" Margin="1015,200,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="170" Margin="1151,200,0,0"/>
-            <iconPacks:PackIconMaterial x:Name="searchManuf" Kind="Magnify" Height="37" Width="34" Margin="1326,200,0,0" Cursor="Hand" MouseLeftButtonUp="searchManuf_MouseLeftButtonUp"/>
-            <Label Content="Vendor: " HorizontalAlignment="Left" Margin="60,272,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="170" Margin="215,272,0,0"/>
-            <Label Content="Branch: " HorizontalAlignment="Left" Margin="436,272,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="193" Margin="553,272,0,0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="25,10,0,558" TextWrapping="Wrap" Text="Stock In" FontWeight="Bold" Style="{StaticResource MaterialDesignDisplay1TextBlock}"/>
+            <Label Content="Inventory Type: " HorizontalAlignment="Left" Margin="60,118,0,461" VerticalAlignment="Stretch"/>
+            <ComboBox HorizontalAlignment="Left" Margin="201,115,0,461" VerticalAlignment="Stretch" Width="170" Height="37"/>
+            <Label Content="Code: " HorizontalAlignment="Left" Margin="399,118,0,461" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="170" Margin="485,115,0,461"/>
+            <iconPacks:PackIconMaterial x:Name="searchDesc" Kind="Magnify" Height="37" Width="35" Margin="678,118,0,0" Cursor="Hand" MouseLeftButtonUp="searchDesc_MouseLeftButtonUp"/>
+            <Label Content="Description: " HorizontalAlignment="Left" Margin="756,118,0,458" VerticalAlignment="Stretch" Height="37"/>
+            <TextBox IsEnabled="False" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="170" Margin="885,118,0,458" RenderTransformOrigin="0.412,-4.243"/>
+            <Label Content="Quantity: " HorizontalAlignment="Left" Margin="60,190,0,386" VerticalAlignment="Stretch" Height="37"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="170" Margin="200,190,0,387"/>
+            <Label Content="Unit: " HorizontalAlignment="Left" Margin="399,190,0,386" VerticalAlignment="Stretch" Height="37"/>
+            <ComboBox HorizontalAlignment="Left" Margin="485,190,0,386" VerticalAlignment="Stretch" Width="170" Height="37" RenderTransformOrigin="1,0.676"/>
+            <Label Content="Price per Unit: " HorizontalAlignment="Left" Margin="60,258,0,318" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="169" Margin="201,258,0,318"/>
+            <Label Content="Date Purchase: " HorizontalAlignment="Left" Margin="382,258,0,318" VerticalAlignment="Stretch"/>
+            <DatePicker HorizontalAlignment="Left" FontSize="18" Margin="526,258,0,317" VerticalAlignment="Stretch" Width="187"/>
+            <Label Content="Expiry Date: " HorizontalAlignment="Left" Margin="724,258,0,318" VerticalAlignment="Stretch"/>
+            <DatePicker HorizontalAlignment="Left" FontSize="18" Margin="837,258,0,318" VerticalAlignment="Stretch" Height="37" Width="165"/>
+            <Label Content="Manufacturer: " HorizontalAlignment="Left" Margin="1020,258,0,318" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="170" Margin="1151,258,0,318"/>
+            <iconPacks:PackIconMaterial x:Name="searchManuf" Kind="Magnify" Height="37" Width="34" Margin="1331,258,0,0" Cursor="Hand" MouseLeftButtonUp="searchManuf_MouseLeftButtonUp"/>
+            <Label Content="Vendor: " HorizontalAlignment="Left" Margin="60,330,0,246" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="170" Margin="201,330,0,246"/>
+            <Label Content="Branch: " HorizontalAlignment="Left" Margin="441,330,0,246" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Stretch" Width="193" Margin="526,330,0,246"/>
+
         </Grid>
     </materialDesign:TransitioningContent>
 </Page>
