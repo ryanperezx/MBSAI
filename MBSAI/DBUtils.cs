@@ -7,7 +7,8 @@ namespace MBSAI
     {
         public static SqlCeConnection GetDBConnection()
         {
-            string datasource = "C:\\Users\\Dell\\Documents\\Visual Studio 2017\\Projects\\MBSAI\\MBSAIDB.sdf";
+            string user = Environment.UserName;
+            string datasource = @"C:\Users\" + user + @"\Desktop\MBSAI\MBSAIDB.sdf";
             return DBSQLServerUtils.GetDBConnection(datasource);
         }
     }

@@ -7,7 +7,7 @@
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="613" d:DesignWidth="1375"
-      Title="StaffRequestReport" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14">
+      Title="StaffRequestReport" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14" Loaded="Page_Loaded">
     <Page.Resources>
 
         <ResourceDictionary>
@@ -32,7 +32,7 @@
             <Label x:Name="lblDate" Content="" HorizontalAlignment="Left" Margin="185,49,0,0" VerticalAlignment="Top" FontWeight="Bold"  FontSize="18"/>
             <Label Content="Department :" HorizontalAlignment="Left" Margin="50,88,0,0" VerticalAlignment="Top" Width="125" FontWeight="Bold"  FontSize="18"/>
             <Label x:Name="lblDeparment" Content="" HorizontalAlignment="Left" Margin="175,88,0,0" VerticalAlignment="Top" Height="34" FontWeight="Bold"  FontSize="18"/>
-            <ListView x:Name="lvStaffRequest" Margin="50,130,50,50">
+            <ListView x:Name="lvStaffRequest" Margin="50,130,50,70" ItemsSource="{Binding}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No." Width="60" DisplayMemberBinding="{Binding i}"/>
@@ -49,6 +49,13 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnPrevious" Kind="AngleLeftSolid" Height="20" Width="20" Margin="0,570,335,0" Cursor="Hand" MouseLeftButtonUp="btnPrevious_MouseLeftButtonUp"/>
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnNext" Kind="AngleRightSolid" Height="20" Width="20" Margin="0,570,310,0" Cursor="Hand" MouseLeftButtonUp="btnNext_MouseLeftButtonUp" />
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnLast" Kind="AngleDoubleRightSolid" Height="20" Width="20" Margin="0,570,285,0" Cursor="Hand" MouseLeftButtonUp="btnLast_MouseLeftButtonUp"/>
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnFirst" Kind="AngleDoubleLeftSolid" Height="20" Width="20" Margin="0,570,365,0" Cursor="Hand" MouseLeftButtonUp="btnFirst_MouseLeftButtonUp"/>
+            <TextBlock x:Name="tbCurrentPage" FontSize="15" HorizontalAlignment="Right" Margin="0,570,193,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Right" FontSize="15" Margin="0,570,182,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbTotalPage" FontSize="15" HorizontalAlignment="Right" Margin="0,570,115,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         </Grid>
     </materialDesign:TransitioningContent>
 </Page>

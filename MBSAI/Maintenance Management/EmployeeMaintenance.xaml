@@ -8,7 +8,7 @@
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="613" d:DesignWidth="1375"
-      Title="EmployeeMaintenance" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      Title="EmployeeMaintenance" Width="Auto" Height="Auto" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="Page_Loaded">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,31 +25,33 @@
     <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromRight}">
         <Grid>
             <TextBlock HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Employee Maintenance" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignDisplay1TextBlock}"/>
-            <DataGrid x:Name="dgEmpMaintenance" Height="472" Margin="60,70,60,0" VerticalAlignment="Top" RowHeight="50" FontSize="18">
-                <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="LightGray"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="CODE" Binding="{Binding Code}" Width="150" IsReadOnly="True">
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="EMPLOYEE NAME" Binding="{Binding empName}" Width="250" IsReadOnly="True">
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="DEPARTMENT" Binding="{Binding department}" Width="240" IsReadOnly="True" >
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="START DATE" Binding="{Binding startDate}" Width="240" IsReadOnly="True" >
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="END DATE" Binding="{Binding endDate}" Width="240" IsReadOnly="True">
-                    </DataGridTextColumn>
-                    <DataGridCheckBoxColumn Header="ACTIVE" Binding="{Binding active}"  Width="100" IsReadOnly="True">
-                    </DataGridCheckBoxColumn>
-
-                </DataGrid.Columns>
-            </DataGrid>
+            <ListView x:Name="lvEmpMaintenance" Height="472" Margin="60,70,60,0" VerticalAlignment="Top" FontSize="18" ItemsSource="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="CODE" DisplayMemberBinding="{Binding Code}" Width="150"/>
+                        <GridViewColumn Header="EMPLOYEE NAME" DisplayMemberBinding="{Binding empName}" Width="250"/>
+                        <GridViewColumn Header="DEPARTMENT" DisplayMemberBinding="{Binding department}" Width="240"/>
+                        <GridViewColumn Header="START DATE" DisplayMemberBinding="{Binding startDate}" Width="240"/>
+                        <GridViewColumn Header="END DATE" DisplayMemberBinding="{Binding endDate}" Width="240"  />
+                        <GridViewColumn Header="ACTIVE"  Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding active}" IsHitTestVisible="False" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
             <iconPacks:PackIconMaterial x:Name="Add" Kind="Plus" HorizontalAlignment="Right" Margin="0,10,121,0" Height="40" Width="40" MouseLeftButtonUp="Add_MouseLeftButtonUp" Cursor="Hand" />
             <iconPacks:PackIconMaterial x:Name="Reload" Kind="Reload" HorizontalAlignment="Right" Height="40" Width="40" Margin="0,10,60,0" MouseLeftButtonUp="Reload_MouseLeftButtonUp" Cursor="Hand" />
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnPrevious" Kind="AngleLeftSolid" Height="20" Width="20" Margin="0,570,335,0" Cursor="Hand" MouseLeftButtonUp="btnPrevious_MouseLeftButtonUp"/>
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnNext" Kind="AngleRightSolid" Height="20" Width="20" Margin="0,570,310,0" Cursor="Hand" MouseLeftButtonUp="btnNext_MouseLeftButtonUp" />
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnLast" Kind="AngleDoubleRightSolid" Height="20" Width="20" Margin="0,570,285,0" Cursor="Hand" MouseLeftButtonUp="btnLast_MouseLeftButtonUp"/>
+            <iconPacks:PackIconFontAwesome HorizontalAlignment="Right" x:Name="btnFirst" Kind="AngleDoubleLeftSolid" Height="20" Width="20" Margin="0,570,365,0" Cursor="Hand" MouseLeftButtonUp="btnFirst_MouseLeftButtonUp"/>
+            <TextBlock x:Name="tbCurrentPage" FontSize="15" HorizontalAlignment="Right" Margin="0,570,193,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Right" FontSize="15" Margin="0,570,182,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbTotalPage" FontSize="15" HorizontalAlignment="Right" Margin="0,570,115,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         </Grid>
     </materialDesign:TransitioningContent>
 

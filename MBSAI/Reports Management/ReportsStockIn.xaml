@@ -35,7 +35,7 @@
                 <ComboBoxItem Content="ALL"/>
                 <ComboBoxItem Content="Medical Supplies"/>
                 <ComboBoxItem Content="Medical Equipment"/>
-                <ComboBoxItem Content="Medicines"/>
+                <ComboBoxItem Content="Medicine"/>
             </ComboBox>
         </Grid>
     </materialDesign:TransitioningContent>

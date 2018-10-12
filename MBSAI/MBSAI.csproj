@@ -80,6 +80,8 @@
     </ApplicationDefinition>
     <Compile Include="DBSQLServerUtils.cs" />
     <Compile Include="DBUtils.cs" />
+    <Compile Include="ExpanderListViewModel.cs" />
+    <Compile Include="ExpanderToBooleanConverter.cs" />
     <Compile Include="ListViewAdjustments.cs" />
     <Compile Include="Reports Management\ListofAdjustmentReport.xaml.cs">
       <DependentUpon>ListofAdjustmentReport.xaml</DependentUpon>

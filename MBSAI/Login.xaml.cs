@@ -49,5 +49,39 @@ namespace MBSAI
             }
         }
 
+        private void txtUsername_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUsername.FontStyle = FontStyles.Normal;
+        }
+
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPassword.FontStyle = FontStyles.Normal;
+        }
+
+        private void txtUsername_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                txtUsername.FontStyle = FontStyles.Italic;
+            }
+            else
+            {
+                txtUsername.FontStyle = FontStyles.Normal;
+
+            }
+        }
+
+        private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Password))
+            {
+                txtPassword.FontStyle = FontStyles.Italic;
+            }
+            else
+            {
+                txtUsername.FontStyle = FontStyles.Normal;
+            }
+        }
     }
 }

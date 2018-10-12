@@ -58,7 +58,7 @@
     </Window.Triggers>
     <Grid>
 
-        <Grid Height="75" VerticalAlignment="Top" Background="AntiqueWhite">
+        <Grid Height="75" VerticalAlignment="Top" Background="Beige">
             <Label Content="MBSAI" HorizontalAlignment="Left" Margin="10,21,0,0" FontSize="20" VerticalAlignment="Top"/>
             <ToggleButton x:Name="ButtonMenu"  Width="30" Height="30"  Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Margin="100,23,1245,22" Cursor="Hand"/>
             <Label x:Name="date" FontSize="14" Content="00:00:00" Margin="0,27,990,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="245"/>
@@ -70,18 +70,20 @@
         </Grid>
 
         <Grid x:Name="GridMenu" Height="618" Width="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,75,0,0" Background="Azure" Panel.ZIndex="2">
-            <StackPanel >
-                <Expander Width="285" Header="Reference Data Management">
+            <StackPanel x:Name="stack" >
+                <StackPanel.Resources>
+                    <local:ExpanderToBooleanConverter x:Key="ExpanderToBooleanConverter" />
+                </StackPanel.Resources>
+                <Expander IsExpanded="{Binding SelectedExpander, Mode=TwoWay, Converter={StaticResource ExpanderToBooleanConverter}, ConverterParameter=1}" Width="285" Header="Reference Data Management">
                     <StackPanel>
                         <TextBlock x:Name="lblInvent" HorizontalAlignment="Right" Text="Inventory Type"  Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInvent_MouseLeftButtonUp" MouseEnter="lblInvent_MouseEnter" MouseLeave="lblInvent_MouseLeave" Cursor="Hand" />
                         <TextBlock x:Name="lblMedSup" Text="Medical Supplies" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedSup_MouseLeftButtonUp" MouseEnter="lblMedSup_MouseEnter" MouseLeave="lblMedSup_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblMedEqp" Text="Medical Equipment" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMedEqp_MouseLeftButtonUp" MouseEnter="lblMedEqp_MouseEnter" MouseLeave="lblMedEqp_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblMed" Text="Medicines" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblMed_MouseLeftButtonUp" MouseEnter="lblMed_MouseEnter" MouseLeave="lblMed_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblUnit" Text="Unit" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblUnit_MouseLeftButtonUp" MouseEnter="lblUnit_MouseEnter" MouseLeave="lblUnit_MouseLeave" Cursor="Hand"/>
-
                     </StackPanel>
                 </Expander>
-                <Expander Width="285" Header="Transaction Management">
+                <Expander IsExpanded="{Binding SelectedExpander, Mode=TwoWay, Converter={StaticResource ExpanderToBooleanConverter}, ConverterParameter=2}" x:Name="expTransact" Width="285" Header="Transaction Management">
                     <StackPanel>
                         <TextBlock x:Name="lblInventSum" Text="Inventory Summary" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblInventSum_MouseLeftButtonUp" MouseEnter="lblInventSum_MouseEnter" MouseLeave="lblInventSum_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblTranStockIn" Text="Stock In" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblTranStockIn_MouseLeftButtonUp" MouseEnter="lblTranStockIn_MouseEnter" MouseLeave="lblTranStockIn_MouseLeave" Cursor="Hand"/>
@@ -89,7 +91,7 @@
                         <TextBlock x:Name="lblAdjustments" Text="Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblAdjustments_MouseLeftButtonUp" MouseEnter="lblAdjustments_MouseEnter" MouseLeave="lblAdjustments_MouseLeave" Cursor="Hand"/>
                     </StackPanel>
                 </Expander>
-                <Expander Width="285" Header="Reports Management">
+                <Expander IsExpanded="{Binding SelectedExpander, Mode=TwoWay, Converter={StaticResource ExpanderToBooleanConverter}, ConverterParameter=3}" x:Name="expReport" Width="285" Header="Reports Management">
                     <StackPanel>
                         <TextBlock x:Name="lblReportStockIn" Text="Stock Ins" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblReportStock_MouseLeftButtonUp" MouseEnter="lblReportStock_MouseEnter" MouseLeave="lblReportStock_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblReportStockOut" Text="Stock Outs" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblStockOut_MouseLeftButtonUp" MouseEnter="lblStockOut_MouseEnter" MouseLeave="lblStockOut_MouseLeave" Cursor="Hand"/>
@@ -99,8 +101,7 @@
                         <TextBlock x:Name="lblList" Text="List of Adjustments" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblList_MouseLeftButtonUp" MouseEnter="lblList_MouseEnter" MouseLeave="lblList_MouseLeave" Cursor="Hand"/>
                     </StackPanel>
                 </Expander>
-
-                <Expander Width="285" Header="Maintenance Management">
+                <Expander IsExpanded="{Binding SelectedExpander, Mode=TwoWay, Converter={StaticResource ExpanderToBooleanConverter}, ConverterParameter=4}" x:Name="expMaintenance" Width="285" Header="Maintenance Management">
                     <StackPanel>
                         <TextBlock x:Name="lblUserMain" Text="User Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblUserMain_MouseLeftButtonUp" MouseEnter="lblUserMain_MouseEnter" MouseLeave="lblUserMain_MouseLeave" Cursor="Hand"/>
                         <TextBlock x:Name="lblRole" Text="Role Maintenance" HorizontalAlignment="Right" Width="240" Height="25" FontSize="14" MouseLeftButtonUp="lblRole_MouseLeftButtonUp" MouseEnter="lblRole_MouseEnter" MouseLeave="lblRole_MouseLeave" Cursor="Hand"/>
@@ -127,8 +128,6 @@
             -->
             <Frame x:Name="Frame" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" Panel.ZIndex="-1" Margin="0,0,0,-5" Width="1375" HorizontalAlignment="Right"/>
         </Grid>
-        <Grid Height="75" VerticalAlignment="Bottom" Background="Aqua">
-            <Label Content="Footer" HorizontalAlignment="Left" Margin="10,21,0,0" FontSize="20" VerticalAlignment="Top"/>
-        </Grid>
+        <Grid Height="75" VerticalAlignment="Bottom" Background="Beige"/>
     </Grid>
 </Window>

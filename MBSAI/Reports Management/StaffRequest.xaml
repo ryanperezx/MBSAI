@@ -35,7 +35,7 @@
                 <ComboBoxItem Content="ALL"/>
                 <ComboBoxItem Content="Medical Supplies"/>
                 <ComboBoxItem Content="Medical Equipment"/>
-                <ComboBoxItem Content="Medicines"/>
+                <ComboBoxItem Content="Medicine"/>
             </ComboBox>
             <Label Content="Department: " HorizontalAlignment="Left" Margin="75,203,0,0" VerticalAlignment="Top"/>
             <ComboBox x:Name="cmbDept"  HorizontalAlignment="Left" Margin="206,203,0,0" VerticalAlignment="Top" Width="170" Height="37">
