@@ -9,6 +9,5 @@ namespace MBSAI
     class ExpanderListViewModel
     {
         public Object SelectedExpander { get; set; }
-
     }
 }

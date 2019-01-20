@@ -125,8 +125,7 @@ namespace MBSAI
         
         private void updateListView()
         {
-            SqlCeConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            /*
             string sql;
             if (inventType == "ALL")
             {
@@ -281,7 +280,9 @@ namespace MBSAI
                         }
                     }
                 }
+                
             }
+            */
         }
     }
 }

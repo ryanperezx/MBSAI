@@ -2,10 +2,10 @@
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
-using System.Data.SqlServerCe;
 using System.Windows.Data;
 using System.Collections.ObjectModel;
-
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace MBSAI
 {
@@ -23,6 +23,7 @@ namespace MBSAI
         int itemcount;
         string from, to, inventoryType;
         int i = 1;
+
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -124,112 +125,116 @@ namespace MBSAI
         }
         private void updateListView()
         {
-            SqlCeConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            var conn = DBUtils.Instance();
+            conn.DatabaseName = "medinventSys";
             string sql;
             if (inventoryType == "ALL")
             {
                 if (string.IsNullOrEmpty(to))
                 {
-                    sql = "SELECT * from tblExpiringInventory where dateExpiry > '" + from + "'";
+                    sql = "SELECT * from tblinventory where dateExpiry > '" + from + "'";
                 }
                 else
                 {
-                    sql = "SELECT * from tblExpiringInventory where dateExpiry between '" + from + "' and '" + to + "'";
+                    sql = "SELECT * from tblinventory where dateExpiry between '" + from + "' and '" + to + "'";
                 }
-                using (SqlCeCommand cmd = new SqlCeCommand(sql, conn))
+                if (conn.IsConnect())
                 {
-                    lvExpiringInvent.Items.Clear();
-                    using (SqlCeDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
+                    using (var cmd = new MySqlCommand(sql, conn.Connection))
                     {
-                        while (reader.Read())
+                        lvExpiringInvent.Items.Clear();
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            //2
-                            int inventTypeIndex = reader.GetOrdinal("inventType");
-                            string inventType = Convert.ToString(reader.GetValue(inventTypeIndex));
-                            //3
-                            int codeIndex = reader.GetOrdinal("code");
-                            string code = Convert.ToString(reader.GetValue(codeIndex));
-                            //4
-                            int descIndex = reader.GetOrdinal("desc");
-                            string desc = Convert.ToString(reader.GetValue(descIndex));
-                            //5
-                            int genNameIndex = reader.GetOrdinal("genName");
-                            string genName = Convert.ToString(reader.GetValue(genNameIndex));
-                            //6
-                            int qtyIndex = reader.GetOrdinal("qty");
-                            int qty = Convert.ToInt32(reader.GetValue(qtyIndex));
-                            //7
-                            int unitIndex = reader.GetOrdinal("unit");
-                            string unit = Convert.ToString(reader.GetValue(unitIndex));
-                            //8
-                            int ppUnitIndex = reader.GetOrdinal("priceperUnit");
-                            double ppUnitDouble = Convert.ToDouble(reader.GetValue(ppUnitIndex));
-                            string ppUnit = ppUnitDouble.ToString("F");
-                            //9
-                            int datePurchaseIndex = reader.GetOrdinal("datePurchase");
-                            myDate = Convert.ToDateTime(reader.GetValue(datePurchaseIndex));
-                            string datePurchase = myDate.ToString("dd MMMM yyyy");
-                            //10
-                            int dateExpiryIndex = reader.GetOrdinal("dateExpiry");
-                            string dateExpiry;
-                            if (reader.GetValue(dateExpiryIndex) == DBNull.Value)
+                            while (reader.Read())
                             {
-                                dateExpiry = "--";
+                                //2
+                                int inventTypeIndex = reader.GetOrdinal("inventType");
+                                string inventType = Convert.ToString(reader.GetValue(inventTypeIndex));
+                                //3
+                                int codeIndex = reader.GetOrdinal("code");
+                                string code = Convert.ToString(reader.GetValue(codeIndex));
+                                //4
+                                int descIndex = reader.GetOrdinal("descript");
+                                string desc = Convert.ToString(reader.GetValue(descIndex));
+                                //5
+                                int genNameIndex = reader.GetOrdinal("genName");
+                                string genName = Convert.ToString(reader.GetValue(genNameIndex));
+                                //6
+                                int qtyIndex = reader.GetOrdinal("qty");
+                                int qty = Convert.ToInt32(reader.GetValue(qtyIndex));
+                                //7
+                                int unitIndex = reader.GetOrdinal("unit");
+                                string unit = Convert.ToString(reader.GetValue(unitIndex));
+                                //8
+                                int ppUnitIndex = reader.GetOrdinal("priceperUnit");
+                                double ppUnitDouble = Convert.ToDouble(reader.GetValue(ppUnitIndex));
+                                string ppUnit = ppUnitDouble.ToString("F");
+                                //9
+                                int datePurchaseIndex = reader.GetOrdinal("datePurchase");
+                                myDate = Convert.ToDateTime(reader.GetValue(datePurchaseIndex));
+                                string datePurchase = myDate.ToString("dd MMMM yyyy");
+                                //10
+                                int dateExpiryIndex = reader.GetOrdinal("dateExpiry");
+                                string dateExpiry;
+                                if (reader.GetValue(dateExpiryIndex) == DBNull.Value)
+                                {
+                                    dateExpiry = "--";
 
+                                }
+                                else
+                                {
+                                    DateTime dateExpiryDate = Convert.ToDateTime(reader.GetValue(dateExpiryIndex));
+                                    dateExpiry = dateExpiryDate.ToString("dd MMMM yyyy");
+                                }
+                                //11
+                                int manufIndex = reader.GetOrdinal("manuf");
+                                string manuf = Convert.ToString(reader.GetValue(manufIndex));
+                                //12
+                                int vendorIndex = reader.GetOrdinal("vendor");
+                                string vendor = Convert.ToString(reader.GetValue(vendorIndex));
+                                //13
+                                int branchIndex = reader.GetOrdinal("branch");
+                                string branch = Convert.ToString(reader.GetValue(branchIndex));
+                                expiringInvent.Add(new ListViewStockInReport
+                                {
+                                    i = i,
+                                    inventType = inventType,
+                                    code = code,
+                                    desc = desc,
+                                    genName = genName,
+                                    qty = qty,
+                                    unit = unit,
+                                    priceperUnit = ppUnit,
+                                    datePurchase = datePurchase,
+                                    dateExpiry = dateExpiry,
+                                    manuf = manuf,
+                                    vendor = vendor,
+                                    branch = branch
+                                });
+                                i++;
+                                itemcount++;
                             }
-                            else
-                            {
-                                DateTime dateExpiryDate = Convert.ToDateTime(reader.GetValue(dateExpiryIndex));
-                                dateExpiry = dateExpiryDate.ToString("dd MMMM yyyy");
-                            }
-                            //11
-                            int manufIndex = reader.GetOrdinal("manuf");
-                            string manuf = Convert.ToString(reader.GetValue(manufIndex));
-                            //12
-                            int vendorIndex = reader.GetOrdinal("vendor");
-                            string vendor = Convert.ToString(reader.GetValue(vendorIndex));
-                            //13
-                            int branchIndex = reader.GetOrdinal("branch");
-                            string branch = Convert.ToString(reader.GetValue(branchIndex));
-                            expiringInvent.Add(new ListViewStockInReport
-                            {
-                                i = i,
-                                inventType = inventType,
-                                code = code,
-                                desc = desc,
-                                genName = genName,
-                                qty = qty,
-                                unit = unit,
-                                priceperUnit = ppUnit,
-                                datePurchase = datePurchase,
-                                dateExpiry = dateExpiry,
-                                manuf = manuf,
-                                vendor = vendor,
-                                branch = branch
-                            });
-                            i++;
-                            itemcount++;
                         }
                     }
+                    conn.Close();
                 }
             }
             else
             {
                 if (string.IsNullOrEmpty(to))
                 {
-                    sql = "SELECT * from tblExpiringInventory where dateExpiry > '" + from + "' and inventType = '" + inventoryType + "'";
+                    sql = "SELECT * from tblinventory where dateExpiry > '" + from + "' and inventType = '" + inventoryType + "'";
                 }
                 else
                 {
-                    sql = "SELECT * from tblExpiringInventory where dateExpiry between '" + from + "' and '" + to + "' and inventType = '" + inventoryType + "'";
+                    sql = "SELECT * from tblinventory where dateExpiry between '" + from + "' and '" + to + "' and inventType = '" + inventoryType + "'";
                 }
-                using (SqlCeCommand cmd = new SqlCeCommand(sql, conn))
+                if (conn.IsConnect())
                 {
-                    lvExpiringInvent.Items.Clear();
-                    using (SqlCeDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
+                    using (var cmd = new MySqlCommand(sql, conn.Connection))
                     {
-                        while (reader.Read())
+                        lvExpiringInvent.Items.Clear();
+                        using (var reader = cmd.ExecuteReader())
                         {
                             //2
                             int inventTypeIndex = reader.GetOrdinal("inventType");
@@ -238,7 +243,7 @@ namespace MBSAI
                             int codeIndex = reader.GetOrdinal("code");
                             string code = Convert.ToString(reader.GetValue(codeIndex));
                             //4
-                            int descIndex = reader.GetOrdinal("desc");
+                            int descIndex = reader.GetOrdinal("descript");
                             string desc = Convert.ToString(reader.GetValue(descIndex));
                             //5
                             int genNameIndex = reader.GetOrdinal("genName");
@@ -299,6 +304,7 @@ namespace MBSAI
                             itemcount++;
                         }
                     }
+                    conn.Close();
                 }
             }
         }

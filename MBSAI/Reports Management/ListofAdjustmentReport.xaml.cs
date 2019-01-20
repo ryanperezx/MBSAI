@@ -125,8 +125,6 @@ namespace MBSAI
         }
         private void updateListView()
         {
-            SqlCeConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
             string sql;
             if (inventType == "ALL")
             {
@@ -138,6 +136,7 @@ namespace MBSAI
                 {
                     sql = "SELECT * from tblAdjustments where adjustDate between '" + from + "' and '" + to + "'";
                 }
+                /*
                 using (SqlCeCommand cmd = new SqlCeCommand(sql, conn))
                 {
                     lvAdjustment.Items.Clear();
@@ -255,6 +254,7 @@ namespace MBSAI
                         }
                     }
                 }
+                */
             }
         }
     }

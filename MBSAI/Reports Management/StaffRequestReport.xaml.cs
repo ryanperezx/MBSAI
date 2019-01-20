@@ -12,7 +12,7 @@ namespace MBSAI
     /// </summary>
     public partial class StaffRequestReport : Page
     {
-        private DateTime date, myDate;
+        private DateTime myDate;
         string from, to, inventoryType, department;
         int i = 1;
         CollectionViewSource view = new CollectionViewSource();
@@ -128,8 +128,7 @@ namespace MBSAI
 
         private void updateListView()
         {
-            SqlCeConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            /*
             lvStaffRequest.Items.Clear();
             if (inventoryType == "ALL" && department == "ALL")
             {
@@ -406,6 +405,7 @@ namespace MBSAI
                     }
                 }
             }
+            */
         }
     }
 }

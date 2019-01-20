@@ -113,8 +113,7 @@ namespace MBSAI
 
         private void updateListView()
         {
-            SqlCeConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            /*
             using (SqlCeCommand cmd = new SqlCeCommand("SELECT * from tblReportStockIn where date < '" + dateToday + "'", conn))
             {
                 lvOutstandingInvent.Items.Clear();
@@ -164,6 +163,7 @@ namespace MBSAI
                     }
                 }
             }
+            */
         }
 
     }
