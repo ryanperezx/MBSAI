@@ -18,7 +18,6 @@ namespace MBSAI
     /// </summary>
     public partial class RoleMaintenance : Page
     {
-        RoleMaintenanceRecord rmr = new RoleMaintenanceRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> roles = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -110,12 +109,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(rmr);
+            this.NavigationService.Navigate(new RoleMaintenanceRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new RoleMaintenance());
+            this.NavigationService.Refresh();
         }
 
         private void btnPrevious_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

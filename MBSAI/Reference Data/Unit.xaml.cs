@@ -18,7 +18,6 @@ namespace MBSAI
     /// </summary>
     public partial class Unit : Page
     {
-        UnitRecord ur = new UnitRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> units = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -152,12 +151,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(ur);
+            this.NavigationService.Navigate(new UnitRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Unit());
+            this.NavigationService.Refresh();
         }
 
     }

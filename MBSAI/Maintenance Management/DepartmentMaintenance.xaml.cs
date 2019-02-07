@@ -18,7 +18,6 @@ namespace MBSAI
     /// </summary>
     public partial class DepartmentMaintenance : Page
     {
-        DepartmentMaintenanceRecord dmr = new DepartmentMaintenanceRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> departments = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -155,12 +154,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(dmr);
+            this.NavigationService.Navigate(new DepartmentMaintenanceRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new DepartmentMaintenance());
+            this.NavigationService.Refresh();
         }
 
         private void btnPrevious_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

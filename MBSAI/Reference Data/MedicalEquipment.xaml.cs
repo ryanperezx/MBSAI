@@ -108,12 +108,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(mer);
+            this.NavigationService.Navigate(new MedicalEquipmentRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new MedicalEquipment());
+            this.NavigationService.Refresh();
         }
 
         private void btnPrevious_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

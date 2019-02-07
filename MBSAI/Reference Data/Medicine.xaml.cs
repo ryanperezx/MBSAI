@@ -18,7 +18,6 @@ namespace MBSAI
     /// </summary>
     public partial class Medical : Page
     {
-        MedicalRecord mr = new MedicalRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> meds = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -28,24 +27,6 @@ namespace MBSAI
         {
             InitializeComponent();
             updateListView();
-            /*
-            GridViewReferenceData item1 = new GridViewReferenceData();
-            item1.Code = "MED001";
-            item1.Desc = "Biogesic";
-            item1.startDate = DateTime.Now.ToString("dd MMMM yyyy");
-            item1.endDate = DateTime.Now.ToString("dd MMMM yyyy");
-            item1.active = true;
-            item1.used = false;
-
-
-            GridViewReferenceData item2 = new GridViewReferenceData();
-            item2.Code = "MED002";
-            item2.Desc = "Neozep non drowse";
-            item2.startDate = DateTime.Now.ToString("dd MMMM yyyy");
-            item2.endDate = DateTime.Now.ToString("dd MMMM yyyy");
-            item2.active = false;
-            item2.used = true;
-            */
         }
 
         private void updateListView()
@@ -171,12 +152,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(mr);
+            this.NavigationService.Navigate(new MedicalRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Medical());
+            this.NavigationService.Refresh();
 
         }
 

@@ -113,7 +113,7 @@ namespace MBSAI
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new UserMaintenance());
+            this.NavigationService.Refresh();
         }
 
         private void btnPrevious_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

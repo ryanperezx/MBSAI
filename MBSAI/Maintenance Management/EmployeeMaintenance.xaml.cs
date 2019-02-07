@@ -21,7 +21,6 @@ namespace MBSAI
     /// </summary>
     public partial class EmployeeMaintenance : Page
     {
-        EmployeeMaintenanceRecord emr = new EmployeeMaintenanceRecord();
         public EmployeeMaintenance()
         {
             InitializeComponent();
@@ -116,12 +115,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(emr);
+            this.NavigationService.Navigate(new EmployeeMaintenanceRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new EmployeeMaintenance());
+            this.NavigationService.Refresh();
 
         }
 

@@ -10,7 +10,7 @@ namespace MBSAI
         {
         }
 
-        private string databaseName = string.Empty;
+        private string databaseName = "medsupinventsys";
         public string DatabaseName
         {
             get { return databaseName; }

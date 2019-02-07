@@ -8,7 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using Dragablz.Core;
+using System.Data.Common;
+using System.Windows.Navigation;
 
 
 namespace MBSAI
@@ -364,6 +365,18 @@ namespace MBSAI
         private void lblUnit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Frame.Navigate(u);
+        }
+
+        private void Frame_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Forward)
+            {
+                e.Cancel = true;
+            }
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -18,7 +18,6 @@ namespace MBSAI
     /// </summary>
     public partial class MedicalSupplies : Page
     {
-        MedicalSuppliesRecord msr = new MedicalSuppliesRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> supplies = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -110,12 +109,12 @@ namespace MBSAI
 
         private void Add_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(msr);
+            this.NavigationService.Navigate(new MedicalSuppliesRecord());
         }
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new MedicalSupplies());
+            this.NavigationService.Refresh();
 
         }
 

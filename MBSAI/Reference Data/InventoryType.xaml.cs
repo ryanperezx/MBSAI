@@ -17,7 +17,6 @@ namespace MBSAI
     /// </summary>
     public partial class InventoryType : Page
     {
-        InventoryTypeRecord itr = new InventoryTypeRecord();
         CollectionViewSource view = new CollectionViewSource();
         ObservableCollection<GridViewReferenceData> inventoryTypes = new ObservableCollection<GridViewReferenceData>();
         int currentPageIndex = 0;
@@ -101,7 +100,7 @@ namespace MBSAI
 
         private void Reload_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(itr);
+            this.NavigationService.Refresh();
         }
 
         private void btnPrevious_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
